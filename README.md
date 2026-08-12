@@ -1,5 +1,5 @@
 # Description
-PoC | Use LiteLLM UI to configure your models. In our case ollama LLM models to be used by Claude Code
+Configure claude code to use ollama models throw LiteLLM AI Gateway UI.
 
 ## Steps
 
