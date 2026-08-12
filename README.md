@@ -49,7 +49,7 @@ Create a code base directory when code your project and inside it, configure Cla
   "env": {
     "ANTHROPIC_BASE_URL": "http://<LITELLM_HOST>:4000",
     "ANTHROPIC_AUTH_TOKEN": "<LITELLM_API_KEY>",
-    "ANTHROPIC_MODEL": "<LITE_LLM_MODEL>"
+    "ANTHROPIC_MODEL": "<LITE_LLM_MODEL_ID>"
   }
 }
 ```
