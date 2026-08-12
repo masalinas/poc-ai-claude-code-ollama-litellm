@@ -9,12 +9,12 @@ To deploy LiteLLM Proxy Server using Docker.
 $ docker compose up -d
 ```
 
-To eemove LiteLLM stack and volumes
+![LiteLLM Stack](./images/litellm_stack.png "LiteLLM Stack")
+
+To remove LiteLLM stack and volumes
 ```shell
 $ docker compose down -v
 ```
-
-![LiteLLM Stack](./images/litellm_stack.png "LiteLLM Stack")
 
 After deployed, we can open the UI using default credentials: admin/sk-1234
 http://localhost:4000/ui
