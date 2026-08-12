@@ -29,12 +29,12 @@ Create an API_KEY to be used by Claude Code from LiteLLM UI
 
 ![LiteLLM API KEY](./images/litellm_api_key.png "LiteLLM API KEY")
 
-- **STEP03**: Add LLM Model. \
-Add model `qwen3:8b` from Ollama Chat provider from liteLLM UI
+- **STEP03**: Add LLM Models. \
+Add model `qwen3:8b` using the Ollama Chat provider from Models + Endpoints from LiteLLM UI:
 
 ![LiteLLM model](./images/litellm_model.png "LiteLLM model")
 
-If you have ollama native installed in your host. You must use this uri to configure your ollama model: `http://host.docker.internal:11434`. If you ahve some problems you can use your host IP.
+If you installed ollama natively in your host, you must use this uri to configure your model API Base: `http://host.docker.internal:11434`. If you have some problems when test this uri, use your host IP (Be carefull if this one is dynamic).
 
 - **STEP4**: Install Claude Code TUI. \
 Install Claude Code TUI in your host:
