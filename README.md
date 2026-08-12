@@ -37,7 +37,7 @@ Add model `qwen3:8b` using the Ollama Chat provider from Models + Endpoints from
 If you installed ollama natively in your host, you must use this uri to configure your model API Base: `http://host.docker.internal:11434`. If you have some problems when test this uri, use your host IP (Be carefull if this one is dynamic).
 
 - **STEP4**: Install Claude Code TUI. \
-Install Claude Code TUI in your host:
+Install Claude Code TUI in your host as usual:
 ```shell
 $ curl -fsSL https://claude.ai/install.sh | bash
 ```
