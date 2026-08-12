@@ -43,7 +43,7 @@ $ curl -fsSL https://claude.ai/install.sh | bash
 ```
 
 - **STEP5**: Configure Claude Code. \
-Create a code base directory when code your project and inside it, configure Claude Code to connect to LiteLLM Proxy server and use its LLM published models.
+Create Claude Code code base configuration file. First create your code base directory when your project code will be and inside, configure Claude Code configuration file called settings.json, to connect to LiteLLM Proxy server and use its LLM published models.
 ```
 {
   "env": {
