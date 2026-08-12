@@ -16,8 +16,7 @@ To remove LiteLLM stack and volumes
 $ docker compose down -v
 ```
 
-After deployed, we can open the UI using default credentials: admin/sk-1234
-http://localhost:4000/ui
+After deployed, we can open the UI using default credentials: **admin/sk-1234** at http://localhost:4000/ui
 
 ![LiteLLM UI](./images/litellm_login.png "LiteLLM UI")
 
