@@ -1,29 +1,31 @@
 # Description
-PoC | Use liteLLM UI to access remote ollama from Claude Code
+PoC | Use LiteLLM UI to configure your models. In our case ollama LLM models to be used by Claude Code
 
 ## Steps
 
 - **STEP01**: Deploy/Remove LiteLLM Proxy Server. \
-Deploy LiteLLM Proxy Server using Docker.
+To deploy LiteLLM Proxy Server using Docker.
 ```shell
 $ docker compose up -d
 ```
 
-Remove LiteLLM stack and volumes
+To eemove LiteLLM stack and volumes
 ```shell
 $ docker compose down -v
 ```
 
-We can access to swagger API:
+After deployed, we can open the UI using default credentials: admin/sk-1234
+http://localhost:4000/ui
+
+![LiteLLM UI](./images/litellm_login.png "LiteLLM UI")
+
+From any SDK we have the LiteLLM Swagger API documentation:
 http://localhost:4000
 
 !["LiteLLM Swagger"](./images/litellm_swagger_api.png "LiteLLM Swagger")
 
-We can open the UI using default credentials: admin/sk-1234
-http://localhost:4000/ui
-
-- **STEP02**: Create a API_KEY. \
-Create an API_KEY to be used by Claude Code from liteLLM UI
+- **STEP02**: Create an API_KEY. \
+Create an API_KEY to be used by Claude Code from LiteLLM UI
 
 ![LiteLLM API KEY](./images/litellm_api_key.png "LiteLLM API KEY")
 
@@ -32,21 +34,22 @@ Add model `qwen3:8b` from Ollama Chat provider from liteLLM UI
 
 ![LiteLLM model](./images/litellm_model.png "LiteLLM model")
 
-- **STEP4**: Install Claude Code. \
-Install Claude Code in your system
+If you have ollama native installed in your host. You must use this uri to configure your ollama model: `http://host.docker.internal:11434`. If you ahve some problems you can use your host IP.
+
+- **STEP4**: Install Claude Code TUI. \
+Install Claude Code TUI in your host:
 ```shell
 $ curl -fsSL https://claude.ai/install.sh | bash
 ```
 
 - **STEP5**: Configure Claude Code. \
-Configure Claude Code from your code base to connect to liteLLM Proxy server
-
+Create a code base directory when code your project and inside it, configure Claude Code to connect to LiteLLM Proxy server and use its LLM published models.
 ```
 {
   "env": {
-    "ANTHROPIC_BASE_URL": "http://localhost:4000",
-    "ANTHROPIC_AUTH_TOKEN": "sk-GtxpICZURffJf6QOtqbXJQ",
-    "ANTHROPIC_MODEL": "qwen3-8b"
+    "ANTHROPIC_BASE_URL": "http://<LITELLM_HOST>:4000",
+    "ANTHROPIC_AUTH_TOKEN": "<LITELLM_API_KEY>",
+    "ANTHROPIC_MODEL": "<LITE_LLM_MODEL>"
   }
 }
 ```
