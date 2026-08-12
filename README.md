@@ -20,8 +20,7 @@ After deployed, we can open the UI using default credentials: **admin/sk-1234** 
 
 ![LiteLLM UI](./images/litellm_login.png "LiteLLM UI")
 
-From any SDK we have the LiteLLM Swagger API documentation:
-http://localhost:4000
+If we want develop using any SDK we have the LiteLLM Swagger API documentation at http://localhost:4000
 
 !["LiteLLM Swagger"](./images/litellm_swagger_api.png "LiteLLM Swagger")
 
