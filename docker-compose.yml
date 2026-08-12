@@ -11,6 +11,7 @@ name: litellm
 
 services:
   litellm:
+    container_name: litellm
     image: docker.litellm.ai/berriai/litellm-database:latest
     ports:
       - "4000:4000"
@@ -24,6 +25,7 @@ services:
         condition: service_healthy
 
   db:
+    container_name: db
     image: postgres:16
     environment:
       POSTGRES_USER: litellm
