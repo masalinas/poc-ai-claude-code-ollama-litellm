@@ -27,7 +27,7 @@ Also you must edit ollama configuration add add this configuration
 $ sudo systemctl edit ollama.service
 ```
 
-Add this env variables: OLLAMA_HOST like this:
+Add this env variables: OLLAMA_HOST like this, to expose ollama service only to external requets from localhost only:
 ```
 ### Editing /etc/systemd/system/ollama.service.d/override.conf
 ### Anything between here and the comment below will become the contents of the drop-in file
