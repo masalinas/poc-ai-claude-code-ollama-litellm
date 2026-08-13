@@ -11,7 +11,55 @@ $ docker compose up -d
 
 ![LiteLLM Stack](./images/litellm_stack.png "LiteLLM Stack")
 
-To remove LiteLLM stack and volumes
+**NOTE**: if you deploy LiteLLM in linux, the node: host.docker.internal is no available, you must registered when start the LiteLLM compose file adding this argument under litellm service like this:
+
+```
+services:
+  litellm:
+    ...
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+```
+
+Also you must edit ollama configuration add add this configuration
+
+```shell
+$ sudo systemctl edit ollama.service
+```
+
+Add this env variables: OLLAMA_HOST like this:
+```
+### Editing /etc/systemd/system/ollama.service.d/override.conf
+### Anything between here and the comment below will become the contents of the drop-in file
+
+[Service]
+Environment="OLLAMA_HOST=0.0.0.0"
+
+### Edits below this comment will be discarded
+
+### /etc/systemd/system/ollama.service
+# [Unit]
+# Description=Ollama Service
+# After=network-online.target
+# 
+# [Service]
+# ExecStart=/usr/local/bin/ollama serve
+# User=ollama
+# Group=ollama
+# Restart=always
+# RestartSec=3
+# Environment="PATH=/home/simur/.sdkman/candidates/java/current/bin:/home/simur/.nvm/versions/node/v24.14.1/bin:/home/simur/.local/bin:/usr/lib/nvidia-cuda-toolkit/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/simur/.lmstudio/bin:/home/simur/.lmstudio/bin"
+# 
+# [Install]
+# WantedBy=default.target
+```
+
+And finally restart ollama service:
+```shell
+$ sudo systemctl restart ollama
+```
+
+If you need remove LiteLLM stack and volumes
 ```shell
 $ docker compose down -v
 ```

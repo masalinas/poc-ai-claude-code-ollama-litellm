@@ -20,6 +20,8 @@ services:
       LITELLM_SALT_KEY: sk-XXXXXXXXXXXXXXXX
       DATABASE_URL: postgresql://litellm:litellm@db:5432/litellm
       STORE_MODEL_IN_DB: "True"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     depends_on:
       db:
         condition: service_healthy
