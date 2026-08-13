@@ -11,7 +11,7 @@ $ docker compose up -d
 
 ![LiteLLM Stack](./images/litellm_stack.png "LiteLLM Stack")
 
-**NOTE**: if you deploy LiteLLM in linux, the node: host.docker.internal is no available, you must registered when start the LiteLLM compose file adding this argument under litellm service like this:
+**NOTE**: if you deploy LiteLLM in linux, the node: `host.docker.internal` is no available, you must registered when start the LiteLLM compose file adding this argument under litellm service like this:
 
 ```
 services:
